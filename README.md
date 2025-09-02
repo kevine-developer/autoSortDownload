@@ -1,70 +1,70 @@
-# 📂 Auto-organisateur de Téléchargements - Extension Chrome
+#  Auto-organisateur de Téléchargements - Extension Chrome
 
-## 🚀 Description
+##  Description
 
 Cette extension Chrome permet d'organiser automatiquement les fichiers téléchargés en les classant dans des dossiers spécifiques en fonction de leur type. Grâce à l'API `chrome.downloads.onDeterminingFilename`, elle trie les fichiers selon leur extension et les enregistre dans des répertoires prédéfinis.  
 > [!NOTE]
 > Une interface utilisateur sera ajoutée dans une prochaine version, permettant de configurer ces paramètres directement depuis le navigateur.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 📂 **Classement automatique** des fichiers téléchargés dans des dossiers : Images, Vidéos, PDF, Documents, Musique, Archives, Logiciels, Applications, Code, Autres.
-- 🔄 **Compatibilité** avec une large gamme d'extensions de fichiers.
-- ⚡ **Fonctionnement transparent** sans intervention manuelle nécessaire.
+-  **Classement automatique** des fichiers téléchargés dans des dossiers : Images, Vidéos, PDF, Documents, Musique, Archives, Logiciels, Applications, Code, Autres.
+-  **Compatibilité** avec une large gamme d'extensions de fichiers.
+-  **Fonctionnement transparent** sans intervention manuelle nécessaire.
 
-## 🛠 Installation
+## Installation
 
-1. 📥 **Télécharger ou cloner** ce dépôt.
-2. 🌐 Ouvrir Chrome et accéder à `chrome://extensions/`.
-3. 🔧 **Activer le mode développeur** en haut à droite.
-4. 📂 Cliquer sur **"Charger un paquet non compressé"**.
-5. 📌 **Sélectionner le dossier** contenant l'extension.
+1.  **Télécharger ou cloner** ce dépôt.
+2.  Ouvrir Chrome et accéder à `chrome://extensions/`.
+3.  **Activer le mode développeur** en haut à droite.
+4.  Cliquer sur **"Charger un paquet non compressé"**.
+5.  **Sélectionner le dossier** contenant l'extension.
 
-## ⚙️ Fonctionnement
+##  Fonctionnement
 
 L'extension écoute les téléchargements en cours et les réoriente automatiquement vers des dossiers en fonction de leur type. Voici les catégories prises en charge :
 
-### 📷 Images
+###  Images
 `jpg`, `jpeg`, `png`, `gif`, `bmp`, `svg`, `webp`, `ico`, `tiff`
 
-### 🎬 Vidéos
+###  Vidéos
 `mp4`, `avi`, `mov`, `mkv`, `flv`, `wmv`, `webm`, `mpg`, `mpeg`, `3gp`, `ogv`, `vob`, `m4v`
 
-### 📄 PDF
+###  PDF
 `pdf`
 
-### 📝 Documents
+###  Documents
 `doc`, `docx`, `txt`, `ppt`, `pptx`, `xls`, `xlsx`, `odt`, `ods`, `odp`, `rtf`, `tex`
 
-### 🎵 Musique
+###  Musique
 `mp3`, `wav`, `aac`, `flac`, `ogg`, `wma`, `m4a`
 
-### 📦 Archives
+###  Archives
 `zip`, `rar`, `tar`, `gz`, `7z`
 
-### 🖥️ Logiciels
+###  Logiciels
 `exe`, `dmg`, `pkg`, `deb`, `rpm`
 
-### 📱 Applications
+###  Applications
 `app`, `apk`, `bat`, `sh`
 
-### 💻 Code
+###  Code
 `html`, `css`, `js`, `php`, `py`, `java`, `cpp`, `c`, `h`, `cs`, `rb`, `pl`, `sql`, `xml`, `json`
 
-### 🔄 Autres
+###  Autres
 `torrent`, `iso`, `bin`, `dll`
 
-## 🔧 Personnalisation
+##  Personnalisation
 
 > [!TIP]
 > Vous pouvez modifier la liste des catégories directement dans le code source de l'extension pour ajouter, supprimer ou réorganiser le tri des fichiers en fonction de vos besoins.
 
-## 📜 Licence
+##  Licence
 
 > [!IMPORTANT]
 > Licence MIT. Vous êtes libre de modifier et d'améliorer l'extension !
 
-## 👤 Auteur
+##  Auteur
 
 Développé par **Kevine Narson YVES**  
-[GitHub - @TeloLabz](https://github.com/gastsar)
+[GitHub - @DevEnGalère](https://github.com/kevine-developer)
