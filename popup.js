@@ -179,8 +179,9 @@ async function switchTab(tabName) {
   document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
   document.getElementById(tabName)?.classList.add('active');
 
+  // Nouvelle ligne : charger les statistiques avant de mettre à jour l'interface
   if (tabName === 'stats') {
-    await loadStats();
+    await loadStats(); 
   }
   updateMainContentUI();
 }

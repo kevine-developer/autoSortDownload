@@ -288,13 +288,13 @@ input:checked + .slider:before {
 .stats-grid {
   padding: 16px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 12px;
 }
 
 .stat-card {
   background: var(--bg-secondary);
-  padding: 16px;
+  padding: 5px;
   border-radius: var(--radius);
   text-align: center;
   border: 1px solid var(--border-color);
