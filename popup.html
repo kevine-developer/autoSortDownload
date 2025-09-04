@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TriAuto des Téléchargements</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <h1 class="title">TriAuto</h1>
+          <div class="toggle-container">
+            <label class="toggle-switch">
+              <input type="checkbox" id="enabledToggle" />
+              <span class="slider round"></span>
+            </label>
+              <button id="refreshButton" class="btn-link" title="Actualiser">
+              <i class="fa-solid fa-arrows-rotate icon-refresh "></i>
+            </button>
+          </div>
+        </div>
+        <p class="subtitle" id="status-message">Tri automatique activé</p>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="categories">
+          Catégories
+        </button>
+        <button class="tab-button" data-tab="stats">Statistiques</button>
+        <button class="tab-button" data-tab="settings">Paramètres</button>
+      </div>
+
+      <div class="content">
+        <div id="categories" class="tab-content active">
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchCategories"
+              class="search-input"
+              placeholder="Rechercher une catégorie..."
+            />
+          </div>
+          <ul id="categoriesList" class="categories-list"></ul>
+        </div>
+
+        <div id="stats" class="tab-content">
+          <div class="stats-header">
+            <h2>Statistiques de tri</h2>
+            <button class="btn-link warning" id="resetStats">
+              Réinitialiser
+            </button>
+          </div>
+          <div id="statsGrid" class="stats-grid">
+            <div class="stat-card total">
+              <div class="stat-number" id="totalFiles">0</div>
+              <div class="stat-label">Fichiers triés</div>
+            </div>
+          </div>
+          <ul id="statsList" class="stats-list"></ul>
+        </div>
+
+        <div id="settings" class="tab-content">
+          <div class="settings-section">
+            <h2>Actions Rapides</h2>
+            <div class="setting-item">
+              <button class="btn-secondary full-width" id="openDownloadsFolder">
+                <i class="fa-solid fa-folder-open"></i> Ouvrir le dossier des
+                téléchargements
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
