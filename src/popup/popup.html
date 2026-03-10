@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TriAuto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="bg-decoration">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+  
+  <div id="app">
+    <header>
+      <div class="header-main">
+        <div class="brand">
+          <div class="logo-icon"></div>
+          <h1>TriAuto</h1>
+        </div>
+        <label class="switch-main">
+          <input type="checkbox" id="enabledToggle">
+          <span class="slider-main"></span>
+        </label>
+      </div>
+      <div id="status-message" class="status-bar">Chargement...</div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="categories">Catégories</button>
+      <button class="tab-btn" data-tab="stats">Stats</button>
+      <button class="tab-btn" data-tab="settings">Outils</button>
+    </nav>
+
+    <main id="main-content">
+      <div id="categories" class="page active">
+        <div class="search-container">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/></svg>
+          <input type="text" id="searchCategories" placeholder="Rechercher une catégorie...">
+        </div>
+        <ul id="categoriesList" class="custom-scrollbar"></ul>
+      </div>
+
+      <div id="stats" class="page">
+        <div class="stats-summary">
+          <div class="total-badge">
+            <span class="label">Total triés</span>
+            <strong id="totalFiles">0</strong>
+          </div>
+          <button id="resetStats" class="btn-icon-danger" title="Réinitialiser">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <ul id="statsList" class="custom-scrollbar"></ul>
+      </div>
+
+      <div id="settings" class="page">
+        <div class="actions-grid">
+          <button id="openDownloadsFolder" class="btn-premium">
+            <span class="btn-text">Dossier Téléchargements</span>
+          </button>
+          <button id="refreshButton" class="btn-premium secondary">
+            <span class="btn-text">Rafraîchir</span>
+          </button>
+        </div>
+      </div>
+    </main>
+    <div class="footer-credit">
+      fait par <a href="https://devengalere.fr" target="_blank"class="footer-credit__link">devengalere</a>
+    </div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
+
