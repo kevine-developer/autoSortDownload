@@ -38,7 +38,16 @@ L'extension gère intelligemment plus de 50 formats :
 
 ---
 
+## ⚡ CI/CD & Releases
+
+Ce projet utilise **GitHub Actions** pour automatiser les tâches répétitives :
+
+- **Build Automatique** : À chaque push sur `main`, l'extension est compressée en `.zip` et disponible en tant qu'artefact.
+- **Auto-Release** : Lorsqu'un tag (ex: `v1.3.1`) est poussé, une Release GitHub est créée automatiquement avec l'archive de l'extension prête à être installée.
+
+---
+
 ## 📝 Licence & Auteur
 
 Projet sous licence **MIT**.  
-Développé avec ❤️ par [**Kevine Narson YVES**](https://github.com/kevine-developer) (fait par devengalere).
+Développé avec ❤️ par [**Kevine Narson YVES**](https://github.com/kevine-developer) (fait par <a href="https://devengalere.fr" target="_blank">devengalere</a>).
