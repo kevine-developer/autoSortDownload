@@ -6,11 +6,18 @@ export async function getConfigAndStats() {
   if (!config) {
     const initialConfig = {
       enabled: true,
+      rootFolder: "TriAuto",
       categories: defaultCategories
     };
     const initialStats = { total: 0 };
     await chrome.storage.local.set({ config: initialConfig, stats: initialStats });
     return { config: initialConfig, stats: initialStats };
+  }
+  
+  // Migration pour les anciennes versions sans rootFolder
+  if (config && config.rootFolder === undefined) {
+    config.rootFolder = "TriAuto";
+    await chrome.storage.local.set({ config });
   }
   
   return { config, stats: stats || { total: 0 } };

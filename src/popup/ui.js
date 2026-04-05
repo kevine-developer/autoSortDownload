@@ -37,6 +37,14 @@ export function updateMainContentUI() {
   const activePage = document.querySelector('.page.active')?.id;
   if (activePage === 'categories') updateCategoriesUI();
   if (activePage === 'stats') updateStatsUI();
+  if (activePage === 'settings') updateSettingsUI();
+}
+
+export function updateSettingsUI() {
+  const rootInput = document.getElementById('rootFolderInput');
+  if (rootInput && currentConfig) {
+    rootInput.value = currentConfig.rootFolder || "";
+  }
 }
 
 export function updateCategoriesUI() {
@@ -143,4 +151,11 @@ export function initializeEventListeners() {
 
   document.getElementById('openDownloadsFolder')?.addEventListener('click', () => chrome.downloads.showDefaultFolder());
   document.getElementById('refreshButton')?.addEventListener('click', () => location.reload());
+
+  document.getElementById('rootFolderInput')?.addEventListener('input', async (e) => {
+    if (currentConfig) {
+      currentConfig.rootFolder = e.target.value.trim();
+      await saveConfigAPI(currentConfig);
+    }
+  });
 }

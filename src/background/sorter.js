@@ -14,18 +14,23 @@ export async function handleDownload(downloadItem, suggest) {
 
   for (const [folder, category] of Object.entries(config.categories)) {
     if (category.enabled && category.extensions && category.extensions.includes(fileExtension)) {
-      let newPath = folder + "/" + fileName;
+      const rootPrefix = config.rootFolder ? config.rootFolder + "/" : "";
+      let newPath = rootPrefix + folder + "/" + fileName;
 
       // Gestion des doublons pour éviter l'écrasement des fichiers
       let newName = fileName;
       let i = 1;
-      const originalPath = folder + "/" + fileName;
+      const originalPath = rootPrefix + folder + "/" + fileName;
       while (downloadItem.byExtension && downloadItem.byExtension.includes(originalPath) && newPath !== originalPath) {
         const parts = fileName.split('.');
-        const namePart = parts.slice(0, -1).join('.');
-        const extPart = parts[parts.length - 1];
-        newName = `${namePart}(${i}).${extPart}`;
-        newPath = folder + "/" + newName;
+        if (parts.length > 1) {
+          const namePart = parts.slice(0, -1).join('.');
+          const extPart = parts[parts.length - 1];
+          newName = `${namePart}(${i}).${extPart}`;
+        } else {
+          newName = `${fileName}(${i})`;
+        }
+        newPath = rootPrefix + folder + "/" + newName;
         i++;
       }
       
@@ -38,7 +43,7 @@ export async function handleDownload(downloadItem, suggest) {
         type: "basic",
         iconUrl: iconPath,
         title: "TriAuto",
-        message: `Le fichier "${fileName}" a été déplacé vers le dossier "${folder}".`,
+        message: `Fichier trié dans : ${rootPrefix}${folder}`,
         priority: 0
       });
 
