@@ -17,6 +17,22 @@ export function updateHeaderUI() {
   if (toggleEl) toggleEl.checked = currentConfig.enabled;
 }
 
+function getCategoryIcon(name) {
+  const icons = {
+    'Images': 'bi-image',
+    'Vidéos': 'bi-play-btn',
+    'PDF': 'bi-file-pdf',
+    'Documents': 'bi-file-earmark-text',
+    'Musique': 'bi-music-note-beamed',
+    'Archives': 'bi-file-zip',
+    'Logiciels': 'bi-pc-display-horizontal',
+    'Applications': 'bi-window-stack',
+    'Code': 'bi-code-slash',
+    'Autres': 'bi-question-circle'
+  };
+  return icons[name] || 'bi-folder-fill';
+}
+
 export function updateMainContentUI() {
   const activePage = document.querySelector('.page.active')?.id;
   if (activePage === 'categories') updateCategoriesUI();
@@ -39,9 +55,14 @@ export function updateCategoriesUI() {
     const li = document.createElement('li');
     li.className = 'category-item';
     li.innerHTML = `
-      <div>
-        <span class="category-name">${name}</span>
-        <span class="category-ext">${cat.extensions.slice(0, 3).join(', ')}${cat.extensions.length > 3 ? '...' : ''}</span>
+      <div class="category-info">
+        <div class="category-icon-wrapper">
+          <i class="bi ${getCategoryIcon(name)}"></i>
+        </div>
+        <div>
+          <span class="category-name">${name}</span>
+          <span class="category-ext">${cat.extensions.slice(0, 3).join(', ')}${cat.extensions.length > 3 ? '...' : ''}</span>
+        </div>
       </div>
       <label class="switch">
         <input type="checkbox" ${cat.enabled ? 'checked' : ''}>
@@ -70,7 +91,15 @@ export function updateStatsUI() {
       if (key === 'total' || val === 0) return;
       const li = document.createElement('li');
       li.className = 'stat-item';
-      li.innerHTML = `<span>${key}</span><span class="stat-count">${val}</span>`;
+      li.innerHTML = `
+        <div class="category-info">
+          <div class="category-icon-wrapper" style="width: 24px; height: 24px; font-size: 0.8rem;">
+            <i class="bi ${getCategoryIcon(key)}"></i>
+          </div>
+          <span>${key}</span>
+        </div>
+        <span class="stat-count">${val}</span>
+      `;
       list.appendChild(li);
     });
   }

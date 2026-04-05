@@ -112,11 +112,16 @@ header {
 }
 
 .logo-icon {
-  width: 12px;
-  height: 12px;
-  background: var(--accent);
-  border-radius: 3px;
-  box-shadow: 0 0 10px var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
 h1 { 
@@ -157,7 +162,7 @@ h1 {
 
 .tab-btn {
   flex: 1;
-  padding: 8px;
+  padding: 8px 4px;
   background: transparent;
   border: none;
   color: var(--text-dim);
@@ -166,6 +171,15 @@ h1 {
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tab-btn i {
+  font-size: 1rem;
 }
 
 .tab-btn.active {
@@ -209,11 +223,12 @@ main {
 
 .search-icon {
   position: absolute;
-  left: 12px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-dim);
   pointer-events: none;
+  font-size: 0.9rem;
 }
 
 #searchCategories {
@@ -270,6 +285,25 @@ ul {
 
 .category-item:hover {
   background: var(--surface-hover);
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
 }
 
 .category-name { 
@@ -431,6 +465,14 @@ input:checked + .slider:before {
   font-size: 0.9rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-premium i {
+  font-size: 1.2rem;
 }
 
 .btn-premium:hover {
@@ -457,6 +499,13 @@ input:checked + .slider:before {
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-danger i {
+  font-size: 1.1rem;
 }
 
 .btn-icon-danger:hover {
